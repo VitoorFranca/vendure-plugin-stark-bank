@@ -1,6 +1,6 @@
 {
   "name": "vendure-plugin-stark-bank",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plugin Stark Bank",
   "author": "Vitor França <franc.vitoor@gmail.com>",
   "repository": "https://github.com/VitoorFranca/vendure-plugin-stark-bank",

@@ -1,36 +1,26 @@
-# Vendure plugin template
+# Vendure Pagar.me Plugin
 
-1. Copy this directory and rename to `vendure-plugin-YOUR-PLUGIN-NAME`
-2. Update the `name` and `description` field in `package.json`
-4. Update this Readme: What does the plugin do? How can someone use your plugin in their project?
-5. Run `npm install` to install the dependencies
-6. Run `npm run start` to start the server
+[![npm (scoped)](https://img.shields.io/npm/v/vendure-plugin-stark-bank.svg)](https://www.npmjs.com/package/vendure-plugin-stark-bank)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-The admin is now available at `http://localhost:3050/admin`. Login with _superadmin/superadmin_
+This plugin is designed to integrate Stark Bank as a payment provider within the Vendure framework. Please note that this is an ongoing project. For details on the remaining tasks and improvements, refer to the Issues section.
 
-The shop GraphQL `http://localhost:3050/shop-api`. Here you can test your custom GraphQL query:
-```graphql
-{
-  exampleQuery
-}
+## ⚙️ Install
+### 1. Install and configure Vendure
+[Here](https://www.vendure.io/docs/getting-started/) you can find out how to install
+
+### 2. Install the package
+```bash
+npm install vendure-plugin-stark-bank --save
 ```
 
-## Testing
-
-1. Run `npm run test` to run the e2e test.
-2. Don't forget to implement your own!
-
-## Publishing to NPM
-
-1. Make sure you are [logged in to NPM](https://docs.npmjs.com/cli/v9/commands/npm-login)
-2. `npm run build`
-3. `npm publish`
-
-That's it!
-
-(Maybe share your accomplishments in the [Vendure Discord](https://vendure.io/community)?
-
-## Next steps
-
-1. Check out [the docs](https://docs.vendure.io/guides/developer-guide/plugins/) to see the possibilities of a plugin
-2. Check out [GraphQL codegen](https://the-guild.dev/graphql/codegen) to generate Typescript types for your custom GraphQL types
+### 3. Add the plugin in Vendure configuration
+```typescript
+import { PagarmePlugin } from 'vendure-plugin-stark-bank';
+const config: VendureConfig = {
+  ...
+  plugins: [
+    PagarmePlugin
+  ]
+}
+```
